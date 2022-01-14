@@ -1,10 +1,10 @@
 <Team Name>
-<Member 0 Name>
-<Member 1 Name>
-<Member 2 Name>
-pd <pd#>
+Rin Fukuoka (Tape)
+John Gupta-She (Po)
+Julia Kozak (Flopsy)
+pd 8
 ---------------------
-<Project Summary / Working Title>
+Minesweeper
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
