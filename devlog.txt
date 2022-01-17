@@ -67,6 +67,12 @@ Rin Fukuoka :: Created team repo and filled out the google form.
 
 ==============================================================
 
+2022-1-14
+--------------------------------------------------------------
+Julia Kozak, Rin Fukuoka :: planned out constructor/instance variables for program, and began coding.
+
+==============================================================
+
 2022-1-15
 --------------------------------------------------------------
 John Gupta-She :: Uploaded flag.jpg. 
