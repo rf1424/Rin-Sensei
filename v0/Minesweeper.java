@@ -9,11 +9,11 @@ public class Minesweeper {
   public Minesweeper() {
     length = 9;
     width = 7;
-    squares = new String[length][width];
-    squareVals = new int[length][width];
-    for (int i=0; i<length; i++) {
-      for (int j=0; j<width; j++) {
-        squares[i][j] = "#";
+    squares = new String[length+2][width+2];
+    squareVals = new int[length+2][width+2];
+    for (int i=1; i<length+1; i++) {
+      for (int j=1; j<width+1; j++) {
+        squares[i][j] = "█";
         squareVals[i][j] = 0;
       }
     }
@@ -25,10 +25,10 @@ public class Minesweeper {
       System.out.print(letters.substring(i, i+1) + " ");
     }
     System.out.println();
-    for (int i=0; i<length; i++) {
-      System.out.print(i+1);
+    for (int i=1; i<length+1; i++) {
+      System.out.print(i);
       System.out.print(" ");
-      for (int j=0; j<width; j++) {
+      for (int j=1; j<width+1; j++) {
         System.out.print("|" + squares[i][j]);
       }
       System.out.println("|");
@@ -50,3 +50,5 @@ public class Minesweeper {
 
   }
 }
+
+// in case we need: ⚑
