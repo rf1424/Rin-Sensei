@@ -19,7 +19,7 @@ public class Minesweeper {
     for (int i=0; i<rows+2; i++) {
       for (int j=0; j<columns+2; j++) {
         squares[i][j] = "sad extreme";
-        squaresVals[i][j] = 9;
+        squareVals[i][j] = 9;
       }
     }
     for (int i=1; i<rows+1; i++) {
@@ -38,10 +38,16 @@ public class Minesweeper {
       }
     }
     for (int i=1; i<rows+1; i++) {
-      for (j=1; j<columns+1; j++) {
+      for (int j=1; j<columns+1; j++) {
         if (squareVals[i][j] != -1) {
           for (int p = i-1; p<i+2; p++) {
-            
+            for (int q=j-1; q<j+2; q++) {
+	      if (p != i || q != j) {
+	        if (squareVals[p][q] == -1) {
+		  squareVals[i][j]++;
+		}
+	      }
+	    }
           }
         }
       }
@@ -50,7 +56,7 @@ public class Minesweeper {
   }
 
   public void printBoard() {
-    System.out.print("   ");
+    System.out.print("    ");
     for (int i=0; i<columns; i++) {
       System.out.print(letters.substring(i, i+1) + " ");
     }
@@ -62,7 +68,7 @@ public class Minesweeper {
         System.out.print(" ");
       }
       for (int j=1; j<columns+1; j++) {
-        System.out.print("|" + squares[i][j]);
+        System.out.print("|" + squareVals[i][j]);
       }
       System.out.println("|");
     }

@@ -1,4 +1,4 @@
-<Team Name>
+Rin-Sensei
 Rin Fukuoka (Tape)
 John Gupta-She (Po)
 Julia Kozak (Flopsy)
@@ -76,3 +76,15 @@ Julia Kozak, Rin Fukuoka :: planned out constructor/instance variables for progr
 2022-1-15
 --------------------------------------------------------------
 John Gupta-She :: Uploaded flag.jpg. 
+
+==============================================================
+
+2022-1-17
+--------------------------------------------------------------
+All :: Finalized proposal.
+
+==============================================================
+
+2022-1-18
+--------------------------------------------------------------
+Julia Kozak, John Gupta-She :: Traced and coded constructor for game board.
