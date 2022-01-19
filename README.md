@@ -1,9 +1,9 @@
 # Team Rin-Sensei
 
 ## Roster
-* Rin Fukuoka
-* Julia Kozak
-* John Gupta-She
+* Rin Fukuoka (Tape)
+* Julia Kozak (Flopsy)
+* John Gupta-She (Po)
 
 
 ## Description
