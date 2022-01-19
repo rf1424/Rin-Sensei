@@ -70,3 +70,10 @@ All :: Finalized proposal.
 2022-1-18
 --------------------------------------------------------------
 Julia Kozak, John Gupta-She :: Traced and coded constructor for game board.
+
+==============================================================
+
+2022-1-19
+--------------------------------------------------------------
+Rin Fukuoka, John Gupta-She :: Updated README file to contain necessary information
+Rin Fukuoka, Julia Kozak :: Created and worked on v2
