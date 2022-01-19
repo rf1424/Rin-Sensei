@@ -103,7 +103,7 @@ public class Minesweeper {
   }
 
   public boolean isRevealed(int c, int r) {
-    return squares[c][r].equals("█") ||squares[c][r].equals("⚑");
+    return !(squares[c][r].equals("█") || squares[c][r].equals("⚑"));
   }
 
   public void printBoard() {
@@ -158,7 +158,11 @@ public class Minesweeper {
       m = 20;
     }
 
-    me = new Minesweeper(r, c, m);
+    if (r > 0 && c > 0 && r <= 25 && c <= 35 && m <= r*c) {
+      me = new Minesweeper(r, c, m);
+    } else {
+      me = new Minesweeper(10, 10, 20);
+    }
 
 
     while(me.playState == 0) {
