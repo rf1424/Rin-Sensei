@@ -61,7 +61,7 @@ public class Minesweeper {
     int ctr = 0;
     for (int i=1; i<rows+1; i++) {
       for (int j=1; j<columns+1; j++) {
-        if (isRevealed(i, j)) {
+        if (!(isRevealed(i, j))) {
           ctr++;
         }
       }
