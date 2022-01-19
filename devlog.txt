@@ -7,24 +7,6 @@ pd 8
 Minesweeper
 
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-USAGE:
-* Replace all fields, angle brackets included, with specified info.
-  eg, pd <pd#> --> pd 3
-* Delete this instruction block once all teammates understand usage.
-
-devlog--
-Use keyboard shortcut to jump to end,
- replicate entry template,
- modify appropriately.
-
-zone of reflection--
-Flesh out each category whenever necessary, appropriate.
- Need not be fully filled in until end of project,
- but best done as you go along.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
 OBSTACLES OVERCOME
@@ -88,3 +70,10 @@ All :: Finalized proposal.
 2022-1-18
 --------------------------------------------------------------
 Julia Kozak, John Gupta-She :: Traced and coded constructor for game board.
+
+==============================================================
+
+2022-1-19
+--------------------------------------------------------------
+Rin Fukuoka, John Gupta-She :: Updated README file to contain necessary information
+Rin Fukuoka, Julia Kozak :: Created and worked on v2
