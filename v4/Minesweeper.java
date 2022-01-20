@@ -1,11 +1,11 @@
 import java.util.*;
 
 public class Minesweeper {
-  String[][] squares;
-  int[][] squareVals;
-  int rows, columns, mines;
-  int playState;
-  final String letters = "ABCDEFGHIJKLMNOPQRSTUVXYZ!@#$%^&*() ";
+  protected String[][] squares;
+  protected int[][] squareVals;
+  protected int rows, columns, mines;
+  protected int playState;
+  final String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*() ";
 
 
   public Minesweeper(int r, int c, int m) {
@@ -105,10 +105,6 @@ public class Minesweeper {
     }
   }
 
-  public void lose() {
-    System.out.println("YOU HIT A MINE BAD JOB");
-  }
-
   public void checkWin() {
     int mCtr = 0;
     for (int i=1; i<rows+1; i++) {
@@ -121,11 +117,40 @@ public class Minesweeper {
     if (mCtr == mines) {
       playState = 1;
     }
+    if (mines == rows*columns){
+      playState = -1;
+    }
   }
 
   public void win() {
+    //show mine locations
+    for (int i=1; i<rows+1; i++) {
+      for (int j=1; j<columns+1; j++) {
+        if (squares[i][j].equals("█")) {
+          squares[i][j] = "X"; //change
+        }
+      }
+    }
     printBoard();
     System.out.println("YOU WON GOOD JOB");
+    }
+
+  public void lose() {
+    //show mine locations
+    for (int i=1; i<rows+1; i++) {
+      for (int j=1; j<columns+1; j++) {
+        squares[i][j] = squareVals[i][j] + "";
+      }
+    }
+    for (int i=1; i<rows+1; i++) {
+      for (int j=1; j<columns+1; j++) {
+        if (squareVals[i][j] == -1) {
+          squares[i][j] = "X"; //change
+        }
+      }
+    }
+    printBoard();
+    System.out.println("YOU HIT A MINE BAD JOB");
   }
 
 
