@@ -100,6 +100,6 @@ Julia Kozak :: Started new game mode using WASD and printed colors, updated erro
 
 2022-1-20
 --------------------------------------------------------------
-Julia Kozak :: finished WASD game mode and color printing for selected square, updated flowchart for main method, updated devlog with obstacles/design changes.
+Julia Kozak :: finished WASD game mode and color printing for selected square, updated flowchart for main method, updated devlog with obstacles/design changes, updated README to match current vision for the game.
 Rin Fukuoka :: updated UML diagram to include new methods/game modes, and functioning driver.
 John Gupta-She :: drafted workflow plan.
