@@ -11,20 +11,35 @@ Minesweeper
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow we so BOSS bc...
+- Having to work out a lot of cases on adjacent squares when counting mines.
+  - We overcame this by working with (#rows+2)x(#columns+2) arrays (see design changes).
+- Run-time errors for reveal(int, int) method.
+  - We added an isRevealed(int, int) boolean that allowed us to only reveal squares if they are not already revealed, so the recursion in the method will terminate.
+- Run-time errors if the input values for rows, columns, mines, were negative or (mines) were too large.
+  - We included an if else in main that would make sure each input is valid for the board, otherwise it'd give a default board.
+- Winning on the first move if the number of mines was equal to the number of squares.
+  - The while loop would make sure a losing square wasn't selected already before checking for a win.
+- Time management?
+  - We drafted a plan for the last few days in order to get everything in order.
 
-UNRESOLVED ISSUES
+UNRESOLVED ISSUES -------//update 1.21 if there are remaining issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 blah blah pesky bug...
 maybe some of these will move into the Obs.Ovrcm section...
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
+- Printing in different colors!
+  - Certain strings represent certain print colors/backgrounds.
+  - Colors remain until you reset (so reset at the end of the printed String).
+- Try/catch related things.
+  - You can't initialize something in a try/catch, so initialize it before.
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed ___ to ___ bc...
+- Mid way, we changed the arrays we were working with from (#rows)x(#columns) to (#rows+2)x(#columns+2), making a 1-wide border around our actual board. This made it easier to count the number of mines in surrounding squares, since rather than doing cases on the sides/corners (to deal with index out of bound errors), we'd assign mines only to the squares printed, and count a 3x3 around each square without any problems.
+- We added a new game mode that would use a "cursor" controlled by WASD (which would print in red and blue) to indicate the square currently selected. The player can press "e" to reveal the highlighted square. We thought this might make controls easier, since a player wouldn't have to determine the input code for a certain move, since this would become more difficult for larger boards. It was also simpler to allow it to take multiple moves at once.
+- We added flagging functionality (in both game modes indicated by "f") which would allow the player to mark which squares are mines. This made the game more reflective of the classic version.
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,17 +78,28 @@ John Gupta-She :: Uploaded flag.jpg.
 
 2022-1-17
 --------------------------------------------------------------
-All :: Finalized proposal.
+All :: Finalized proposal, and began skeleton (instance vars, printing game board, placing mines) for v0.
 
 ==============================================================
 
 2022-1-18
 --------------------------------------------------------------
-Julia Kozak, John Gupta-She :: Traced and coded constructor for game board.
+Julia Kozak, John Gupta-She :: Traced and coded constructor for game board (v1), including assigning numerical values to each square.
+All :: Drafted UML diagram for the Minesweeper class, with instance vars/methods.
 
 ==============================================================
 
 2022-1-19
 --------------------------------------------------------------
-Rin Fukuoka, John Gupta-She :: Updated README file to contain necessary information
-Rin Fukuoka, Julia Kozak :: Created and worked on v2
+Rin Fukuoka, John Gupta-She :: Updated README file to contain necessary information, began drafting flowchart.
+Rin Fukuoka, Julia Kozak :: Created and worked on v2.
+Rin Fukuoka :: Updated program to include game modes, printed error messages, final mine reveal, and driver.
+Julia Kozak :: Started new game mode using WASD and printed colors, updated error handling in main method, updated win/lose methods.
+
+==============================================================
+
+2022-1-20
+--------------------------------------------------------------
+Julia Kozak :: finished WASD game mode and color printing for selected square, updated flowchart for main method, updated devlog with obstacles/design changes.
+Rin Fukuoka :: updated UML diagram to include new methods/game modes, and functioning driver.
+John Gupta-She :: drafted workflow plan.
