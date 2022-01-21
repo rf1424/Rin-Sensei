@@ -2,8 +2,6 @@ import java.util.*;
 
 public class Woo{
 
-
-
   public static void main(String[] args) {
     Scanner response = new Scanner(System.in);
     int r, c, m;

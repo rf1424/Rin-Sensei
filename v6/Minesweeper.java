@@ -247,7 +247,8 @@ public class Minesweeper {
               "MOVE DOWN:  s" + "\n" +
               "MOVE LEFT:  a" + "\n" +
               "REVEAL:  e" + "\n" +
-              "FLAG:  f";
+              "FLAG:  f" + "\n" +
+              "(Ex: Type 'dde' to go right 2 squares and reveal it.)";
 
      System.out.println("==================================================");
      System.out.println("PLAY GUIDE");
