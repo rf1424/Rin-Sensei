@@ -15,8 +15,12 @@ public class Minesweeper {
   final String letters = "ABCDEFGHIJKLMNOPQRSTUVXYZ!@#$%^&*(){}|:<>?[]\',. ";
 
 
-  public Minesweeper(int r, int c, int m) {
+  public Minesweeper() {
     playState = 0;
+  };
+
+  public Minesweeper(int r, int c, int m) {
+    this();
     rows = r;
     columns = c;
     squares = new String[rows+2][columns+2];
@@ -229,6 +233,33 @@ public class Minesweeper {
   public void win() {
     printBoard(ANSI_YELLOW_BACKGROUND);
     System.out.println("YOU WON GOOD JOB");
+  }
+
+  public void printInstr(int mode){
+    String tGuide;
+    String akGuide;
+    //typing mode
+    tGuide = "REVEAL:  alaphabet/symbol + number (Ex: A1)\n" +
+             "FLAG:  alaphabet/symbol + number + 'f' (Ex: A1f)";
+    //arrow key mode
+    akGuide = "MOVE UP:  w" + "\n" +
+              "MOVE RIGHT:  d" + "\n" +
+              "MOVE DOWN:  s" + "\n" +
+              "MOVE LEFT:  a" + "\n" +
+              "REVEAL:  e" + "\n" +
+              "FLAG:  f";
+
+     System.out.println("==================================================");
+     System.out.println("PLAY GUIDE");
+     System.out.println("--------------------------------------------------");
+     if (mode == 0){
+       System.out.println(akGuide);
+     } else {
+       System.out.println(tGuide);
+     }
+     System.out.println("==================================================");
+
+
   }
 
 

@@ -1,7 +1,9 @@
 import java.util.*;
 
 public class Woo{
-  
+
+
+
   public static void main(String[] args) {
     Scanner response = new Scanner(System.in);
     int r, c, m;
@@ -46,6 +48,7 @@ public class Woo{
       you = new Minesweeper(10, 10, 20);
     }
 
+
     you.svC = 1;
     you.svR = 1;
 
@@ -53,11 +56,14 @@ public class Woo{
     input = response.nextLine();
     if (input.toLowerCase().equals("y")) {
       you.playMode = 0;
+      you.printInstr(0);
     } else if (input.toLowerCase().equals("n")) {
       you.playMode = 1;
+      you.printInstr(1);
     } else {
       System.out.println("i'll take that as a no");
       you.playMode = 1;
+      you.printInstr(1);
     }
 
     if (you.playMode == 1) {
@@ -68,10 +74,14 @@ public class Woo{
         try {
           you.processInputI(input);
         } catch (Exception e) {
-          System.out.println("Invalid move:" +
-                           "Your move should be an alaphabet/symbol\n" +
-                           "followed by a number on the board. Ex: A1");
+            System.out.println("INVALID MOVE. Type 'p' for play guide.");
+            System.out.println();
         }
+        //print help guide
+        if (input.equals("p")) {
+          you.printInstr(1);
+        }
+
         if (you.playState == 0) {
           you.checkWin();
         } else {}
@@ -79,8 +89,15 @@ public class Woo{
     } else {
       while(you.playState == 0) {
         you.printBoardC();
+        System.out.println("type 'p' for play guide.");
         System.out.print("your move:");
         input = response.nextLine();
+
+        //print play guide
+        if (input.equals("p")){
+          you.printInstr(0);
+        }
+
         try {
           you.processInputC(input);
         } catch (Exception e) {
@@ -98,6 +115,8 @@ public class Woo{
     } else {
       you.lose(); //smh
     }
+
+
 
 
   }//end of main
