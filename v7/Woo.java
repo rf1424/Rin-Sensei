@@ -1,6 +1,9 @@
 import java.util.*;
 
 public class Woo{
+  public static final String ANSI_RED = "\u001B[31m";
+  public static final String ANSI_RESET = "\u001B[0m";
+  public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
 
   public static void main(String[] args) {
     Scanner response = new Scanner(System.in);
@@ -8,9 +11,36 @@ public class Woo{
     String input;
 
     System.out.println("======================");
-    System.out.println("WELCOME TO MINESWEEPER");
+    System.out.println(ANSI_RED + "WELCOME TO MINESWEEPER" + ANSI_RESET);
     System.out.println("======================");
+    String desc = "The classic version of the game consists of a board of" +
+    "hidden squares and randomly placed mines underneath some squares.\n" +
+    "The player can choose to select a square to reveal" +
+    ", upon which the board will either reveal\n" +
+    "that square by showing the total number of mines directly or diagonally a" +
+    "djacent to it, or the player loses because they selected a mine. \n" +
+    "The goal is to reveal the entire board without selecting a mine.\n" +
+    "A player can also select (normally right-click) a square to flag it as a mine.";
+    String desc2 =
+    "WASD: One square of the board will be highlighted in red/blue,\n" +
+    "which the player can control with WASD and enter 'e' or 'f' to reveal or flag.\n" +
+    "without WASD: Column/row indices (numbers/letters) will be printed on the side\n" +
+    "of the board, and the player can input a certain code for the move they want to make.\n";
+
+    System.out.println(desc);
     System.out.println();
+    System.out.println(desc2);
+    System.out.println("--------------------------------------------------");
+
+
+    //see rules
+    System.out.print("Do you know how to play? (y/n): ");
+    input = response.nextLine();
+    if (input.equals("y")) {
+      System.out.println("");
+    }
+
+
 
     //choose board
     System.out.println("Choose your board size.");
