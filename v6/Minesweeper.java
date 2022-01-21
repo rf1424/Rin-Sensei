@@ -1,18 +1,18 @@
 import java.util.*;
 
 public class Minesweeper {
-  String[][] squares;
-  int[][] squareVals;
-  int rows, columns, mines;
-  int playState;
-  int playMode;
-  int svR, svC;
+  public String[][] squares;
+  public int[][] squareVals;
+  public int rows, columns, mines;
+  public int playState;
+  public int playMode;
+  public int svR, svC;
   public static final String ANSI_RED = "\u001B[31m";
   public static final String ANSI_RESET = "\u001B[0m";
   public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
   public static final String ANSI_RED_BACKGROUND = "\u001B[41m";
   public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
-  final String letters = "ABCDEFGHIJKLMNOPQRSTUVXYZ!@#$%^&*(){}|:<>?[]\',. ";
+  final String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*(){}|:<>?[]\',. ";
 
 
   public Minesweeper() {
