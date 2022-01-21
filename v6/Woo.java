@@ -21,7 +21,7 @@ public class Woo{
       //set to default board
       r = 10;
       c = 10;
-      m = 20;
+      m = 16;
       System.out.println();
     }
     //set your own board
@@ -51,13 +51,13 @@ public class Woo{
         m = Integer.parseInt(input);
       } catch (Exception e) {
         System.out.println("Invalid input. Random number of mines.");
-        m = (int)(Math.random()*(r*c/3.0));
+        m = (int)(Math.random()*(r*c/6.0));
       }
     System.out.println();
   } else {//neither y or n. Set to default board.
     r = 10;
     c = 10;
-    m = 20;
+    m = 16;
     System.out.println("There was a problem with your input." +
                        " You'll get the default board.");
     System.out.println();
@@ -72,7 +72,7 @@ public class Woo{
     } else {
       System.out.println("There was a problem with your input." +
                          " You'll get the default board.");
-      you = new Minesweeper(10, 10, 20);
+      you = new Minesweeper(10, 10, 16);
     }
 
 
