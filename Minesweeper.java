@@ -7,6 +7,7 @@ public class Minesweeper {
   public int playState;
   public int playMode;
   public int svR, svC;
+  public static final String ANSI_BLUE = "\u001B[34m";
   public static final String ANSI_RED = "\u001B[31m";
   public static final String ANSI_RESET = "\u001B[0m";
   public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
@@ -240,27 +241,28 @@ public class Minesweeper {
     String akGuide;
     //typing mode
     tGuide = "REVEAL:  alaphabet/symbol + number (Ex: A1)\n" +
-             "FLAG:  alaphabet/symbol + number + 'f' (Ex: A1f)";
+             "FLAG/UNFLAG:  alaphabet/symbol + number + 'f' (Ex: A1f)";
     //arrow key mode
     akGuide = "MOVE UP:  w" + "\n" +
               "MOVE RIGHT:  d" + "\n" +
               "MOVE DOWN:  s" + "\n" +
               "MOVE LEFT:  a" + "\n" +
               "REVEAL:  e" + "\n" +
-              "FLAG:  f" + "\n" +
+              "FLAG/UNFLAG:  f" + "\n" +
               "(Ex: Type 'dde' to go right 2 squares and reveal it.)";
 
-     System.out.println("==================================================");
+     System.out.print(ANSI_BLUE);
+     System.out.println("=======================================================");
      System.out.println("PLAY GUIDE");
-     System.out.println("--------------------------------------------------");
+     System.out.println("-------------------------------------------------------");
      if (mode == 0){
        System.out.println(akGuide);
      } else {
        System.out.println(tGuide);
      }
-     System.out.println("==================================================");
-
-
+     System.out.println("=======================================================");
+     System.out.println();
+     System.out.print(ANSI_RESET);
   }
 
 

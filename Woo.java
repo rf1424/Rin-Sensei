@@ -1,27 +1,51 @@
 import java.util.*;
 
 public class Woo{
+  public static final String ANSI_BLUE = "\u001B[34m";
+  public static final String ANSI_RESET = "\u001B[0m";
+  public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
 
   public static void main(String[] args) {
     Scanner response = new Scanner(System.in);
     int r, c, m;
     String input;
 
+    //display start page/description
+    System.out.println();
     System.out.println("======================");
     System.out.println("WELCOME TO MINESWEEPER");
     System.out.println("======================");
+    String desc =
+    "The classic version of the game consists of a board of " +
+    "hidden squares and randomly placed mines underneath some squares.\n" +
+    "The player can choose to select a square to reveal," +
+    " upon which the board will either reveal that square \n" +
+    "by showing the total number of mines directly or diagonally " +
+    "adjacent to it, or the player loses because they selected a mine. \n" +
+    "The goal is to reveal the entire board without selecting a mine. " +
+    "A player can also select a square to flag it as a mine.";
+    String desc2 =
+    "WASD(Arrow Keys): One square of the board will be highlighted in red/blue,\n" +
+    "which the player can control with WASD and enter 'e' or 'f' to reveal or flag.\n" +
+    "Without WASD: Column/row indices (alphabet/number) will be printed on the side\n" +
+    "of the board, and the player can input a certain code for the move they want to make.";
+    System.out.print(ANSI_BLUE);
+    System.out.println(desc);
     System.out.println();
+    System.out.println(desc2);
+    System.out.println();
+    System.out.print(ANSI_RESET);
 
     //choose board
     System.out.println("Choose your board size.");
     System.out.println();
-    System.out.println("Do you want the default board? (y/n)");
+    System.out.print("Do you want the default board? (y/n): ");
     input = response.nextLine();
     if (input.equals("y")) {
       //set to default board
       r = 10;
       c = 10;
-      m = 20;
+      m = 16;
       System.out.println();
     }
     //set your own board
@@ -51,13 +75,13 @@ public class Woo{
         m = Integer.parseInt(input);
       } catch (Exception e) {
         System.out.println("Invalid input. Random number of mines.");
-        m = (int)(Math.random()*(r*c/3.0));
+        m = (int)(Math.random()*(r*c/6.0));
       }
     System.out.println();
   } else {//neither y or n. Set to default board.
     r = 10;
     c = 10;
-    m = 20;
+    m = 16;
     System.out.println("There was a problem with your input." +
                        " You'll get the default board.");
     System.out.println();
@@ -72,7 +96,7 @@ public class Woo{
     } else {
       System.out.println("There was a problem with your input." +
                          " You'll get the default board.");
-      you = new Minesweeper(10, 10, 20);
+      you = new Minesweeper(10, 10, 16);
     }
 
 
