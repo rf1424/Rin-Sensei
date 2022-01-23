@@ -3,15 +3,15 @@ import java.util.*;
 public class Woo{
   public static final String ANSI_BLUE = "\u001B[34m";
   public static final String ANSI_RESET = "\u001B[0m";
-  public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
+
 
   public static void main(String[] args) {
     Scanner response = new Scanner(System.in);
-    int r, c, m;
+    int r, c, m; //row, column, mines
     String input;
+    long startT, endT, resultT; //record time
 
     //display start page/description
-    System.out.println();
     System.out.println("======================");
     System.out.println("WELCOME TO MINESWEEPER");
     System.out.println("======================");
@@ -103,27 +103,33 @@ public class Woo{
     you.svC = 1;
     you.svR = 1;
 
+    //set game board
     System.out.print("Do you want to use your arrow keys? (y/n): ");
     input = response.nextLine();
+    //set to WASD(arrowkey) mode
     if (input.toLowerCase().equals("y")) {
       you.playMode = 0;
       System.out.println();
       you.printInstr(0);
-    } else if (input.toLowerCase().equals("n")) {
+    } else if (input.toLowerCase().equals("n")) { //set to typing mode
       you.playMode = 1;
       System.out.println();
       you.printInstr(1);
-    } else {
+    } else { //set to typing mode
       System.out.println("I'll take that as a no");
       you.playMode = 1;
       you.printInstr(1);
     }
 
+    startT = System.currentTimeMillis(); //start timer
+
+    //WASD(arrowkey) mode
     if (you.playMode == 1) {
       while(you.playState == 0) {
         you.printBoardI();
         System.out.print("your move:");
         input = response.nextLine();
+
         try {
           you.processInputI(input);
         } catch (Exception e) {
@@ -139,7 +145,7 @@ public class Woo{
           you.checkWin();
         } else {}
       }
-    } else {
+    } else { //Typing mode
       while(you.playState == 0) {
         you.printBoardC();
         System.out.println("type 'p' for play guide.");
@@ -164,8 +170,15 @@ public class Woo{
 
 
     if (you.playState == 1) {
+      endT = System.currentTimeMillis(); //end timer
       you.win(); //!!
+
+      //print time
+      resultT = (int)((endT - startT)/1000);
+      System.out.println("Your time: " + resultT + " seconds");
+
     } else {
+      endT = System.currentTimeMillis(); //end timer
       you.lose(); //smh
     }
 

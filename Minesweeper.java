@@ -1,8 +1,8 @@
 import java.util.*;
 
 public class Minesweeper {
-  public String[][] squares;
-  public int[][] squareVals;
+  public String[][] squares; //display board
+  public int[][] squareVals; //value-storing board
   public int rows, columns, mines;
   public int playState;
   public int playMode;
@@ -15,17 +15,19 @@ public class Minesweeper {
   public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
   final String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*(){}|:<>?[]\',. ";
 
-
+  //default constructor
   public Minesweeper() {
     playState = 0;
   };
 
+  //overloaded constructor, set the mine board
   public Minesweeper(int r, int c, int m) {
     this();
     rows = r;
     columns = c;
     squares = new String[rows+2][columns+2];
     squareVals = new int[rows+2][columns+2];
+    //set placeholder values
     for (int i=0; i<rows+2; i++) {
       for (int j=0; j<columns+2; j++) {
         squareVals[i][j] = 9;
@@ -38,6 +40,7 @@ public class Minesweeper {
         squareVals[i][j] = 0;
       }
     }
+    //determine mine locations
     while(mines != m) {
       int rIndex = (int)(Math.random()*(rows)) + 1;
       int cIndex = (int)(Math.random()*(columns)) + 1;
@@ -46,6 +49,7 @@ public class Minesweeper {
         mines ++;
       }
     }
+    //set number for each square depending on the # of mines around it
     for(int i=1; i<rows+1; i++) {
       for (int j=1; j<columns+1; j++) {
         if (squareVals[i][j] != -1) {
@@ -65,10 +69,11 @@ public class Minesweeper {
 
 
   }
-
+  //typing playmode
   public void processInputI(String e){
     int cCor = letters.indexOf(e.substring(0, 1)) + 1;
     int rCor;
+    //check whether flag or reveal
     boolean wFlag = e.substring(e.length()-1).toLowerCase().equals("f");
     if (wFlag) {
       rCor = Integer.parseInt(e.substring(1, e.length()-1));
@@ -78,45 +83,48 @@ public class Minesweeper {
     if (squareVals[rCor][cCor] != -1 && !wFlag) {
       reveal(rCor, cCor);
     } else if (wFlag) {
-      if (squares[rCor][cCor].equals("█")) {
+      if (squares[rCor][cCor].equals("█")) { //flag
         squares[rCor][cCor] = "⚑";
-      } else if (squares[rCor][cCor].equals("⚑")){
+      } else if (squares[rCor][cCor].equals("⚑")){ //unflag
         squares[rCor][cCor] = "█";
-      } else {}
+      } else {
+        System.out.println("INVALID MOVE. Type 'p' for play guide.");
+      }
     } else {
       playState = -1;
     }
   }
 
+  //WASD(arrowkey) playmode
   public void processInputC(String input) {
     for (int i=0; i < input.length(); i++) {
       String e = String.valueOf(input.charAt(i));
-      if (e.toLowerCase().equals("w")) {
+      if (e.toLowerCase().equals("w")) { //move up
         if (svR > 1) {
           select(svR-1, svC);
         } else {}
-      } else if (e.toLowerCase().equals("a")) {
+      } else if (e.toLowerCase().equals("a")) { //move left
         if (svC > 1) {
           select(svR, svC-1);
         } else {}
-      } else if (e.toLowerCase().equals("s")) {
+      } else if (e.toLowerCase().equals("s")) { //move down
         if (svR < rows) {
           select(svR+1, svC);
         } else {}
-      } else if (e.toLowerCase().equals("d")) {
+      } else if (e.toLowerCase().equals("d")) { //move right
         if (svC < columns) {
           select(svR, svC+1);
         }
-      } else if (e.toLowerCase().equals("e")) {
+      } else if (e.toLowerCase().equals("e")) { //reveal
         if (!(squareVals[svR][svC] == -1)) {
           reveal(svR, svC);
         } else {
           playState = -1;
         }
       } else if (e.toLowerCase().equals("f")) {
-        if (squares[svR][svC].equals("█")) {
+        if (squares[svR][svC].equals("█")) { //flag
           squares[svR][svC] = "⚑";
-        } else if (squares[svR][svC].equals("⚑")){
+        } else if (squares[svR][svC].equals("⚑")){ //unflag
           squares[svR][svC] = "█";
         }
       }
