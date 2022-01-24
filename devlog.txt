@@ -22,10 +22,9 @@ OBSTACLES OVERCOME
 - Time management?
   - We drafted a plan for the last few days in order to get everything in order.
 
-UNRESOLVED ISSUES -------//update 1.21 if there are remaining issues
+UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
+- In typical minesweeper, your first move cannot result in a loss, but in our terminal version, it can.
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -43,8 +42,9 @@ MID-DEVELOPMENT DESIGN CHANGES
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-tales of wisdom gained...
-||||||||||||||||||||||||||||||||||||||||||
+- You can work around unusual cases of indices in arrays by adding empty spaces around it.
+- Helper methods are extremely useful and should be used to reduce clutter/increase clarity.
+- Sometimes drafting and following a plan are useful for getting stuff done on time.
 
 
 
@@ -103,3 +103,21 @@ Julia Kozak :: Started new game mode using WASD and printed colors, updated erro
 Julia Kozak :: finished WASD game mode and color printing for selected square, updated flowchart for main method, updated devlog with obstacles/design changes, updated README to match current vision for the game.
 Rin Fukuoka :: updated UML diagram to include new methods/game modes, modified main to go in the driver, wrote player guides/instructions to print.
 John Gupta-She :: drafted workflow plan, updated prints to show game instructions/error messages.
+
+==============================================================
+
+2022-1-21
+--------------------------------------------------------------
+All :: Added rules, colors, and a timer, just like in regular minesweeper
+
+==============================================================
+
+2022-1-22
+--------------------------------------------------------------
+All :: Worked on devlog, completed "Obstacles Overcome", "Cool Stuff Learned", and "Mid-Development Design Changes"
+
+==============================================================
+
+2022-1-23
+--------------------------------------------------------------
+All :: Finished devlog, completed "Unresolved Issues" and "Lessons Learned"
