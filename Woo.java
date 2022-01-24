@@ -116,7 +116,7 @@ public class Woo{
       System.out.println();
       you.printInstr(1);
     } else { //set to typing mode
-      System.out.println("I'll take that as a no");
+      System.out.println("I'll take that as a no.");
       you.playMode = 1;
       you.printInstr(1);
     }
@@ -127,7 +127,7 @@ public class Woo{
     if (you.playMode == 1) {
       while(you.playState == 0) {
         you.printBoardI();
-        System.out.print("your move:");
+        System.out.print("your move: ");
         input = response.nextLine();
 
         try {
@@ -149,7 +149,7 @@ public class Woo{
       while(you.playState == 0) {
         you.printBoardC();
         System.out.println("type 'p' for play guide.");
-        System.out.print("your move:");
+        System.out.print("your move: ");
         input = response.nextLine();
 
         //print play guide

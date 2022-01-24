@@ -81,7 +81,11 @@ public class Minesweeper {
       rCor = (Integer.parseInt(e.substring(1)));
     }
     if (squareVals[rCor][cCor] != -1 && !wFlag) {
-      reveal(rCor, cCor);
+      if (squareVals[rCor][cCor] == 9) { //edge squares
+        System.out.println("INVALID MOVE. Type 'p' for play guide.");
+      } else {
+        reveal(rCor, cCor);
+      }
     } else if (wFlag) {
       if (squares[rCor][cCor].equals("█")) { //flag
         squares[rCor][cCor] = "⚑";
