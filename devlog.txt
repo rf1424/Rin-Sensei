@@ -120,4 +120,4 @@ All :: Worked on devlog, completed "Obstacles Overcome", "Cool Stuff Learned", a
 
 2022-1-23
 --------------------------------------------------------------
-All :: Finished devlog, completed "Unresolved Issues" and "Lessons Learned"
+All :: Finished devlog, completed "Unresolved Issues" and "Lessons Learned", updated UML 
